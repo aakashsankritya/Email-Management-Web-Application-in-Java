@@ -1,0 +1,118 @@
+<html>
+<head><title>Welcome to Mailing System</title>
+<script >
+function check()
+{
+	var u=window.document.signmeup.uname.value;
+   	var p=window.document.signmeup.pwd.value;
+   	var newp=window.document.signmeup.pwd1.value;
+    	var a=window.document.signmeup.age.value;
+    	pi=window.document.signmeup.pin.value;
+   	if(u=="")
+   	{
+   		alert("Please enter the username");
+   		window.document.signmeup.uname.focus();
+   	}
+   	else if(!isNaN(u))
+   	{
+   		alert("Please enter the name in characters");
+   		document.signmeup.uname.focus();
+   	}
+  	else  if(p=="")
+   	{
+   		alert("Please enter the pass word");
+   		window.document.signmeup.pwd.focus();
+   	}
+    	else  if(!isNaN(p))
+    	{
+    		alert("Please enter the password in characters");
+    		document.signmeup.pwd.focus();
+    	}
+   	else if(a=="")
+   	{
+   		alert("Please enter the age column");
+   		window.document.signmeup.age.focus();
+   	}
+    	else if(isNaN(a))
+    	{
+    		alert("Please enter the age in numbers");
+    		document.signmeup.age.focus();
+    	}
+  	else if(pi=="")
+   	{
+   		alert("Please enter the pincode ");
+   		window.document.signmeup.pin.focus();
+   	}
+    	else  if(isNaN(pi))
+    	{
+    		alert("Please enter the pincode in numbers");
+    		document.signmeup.pin.focus();
+    	}
+    	else if(p!=newp)
+   	{
+		alert("Password Doesn't match");
+		document.signmeup.pwd.value="";
+		document.signmeup.pwd1.value="";
+    		document.signmeup.pwd.focus();
+	}		
+	else
+		document.signmeup.submit();
+
+}
+</script>
+</head>
+<body bgcolor="cyan" text="blue"> <font size=+1 >
+
+<blink><center>
+
+<h1><font color=red>Sign Me Up</font></h1></center></blink>
+
+<center><h4><img src="hand.gif">
+ Fill All the Data</h4>
+    <img src="BURSTANI.GIF">  
+<form method=post name=signmeup action="./Serv_SignMeUp">
+
+<table cellpadding=10>
+<tr><td> UserName :</td><td><input type =text name =uname value="" ></td></tr>
+
+<tr><td>	Password :</td><td><input type =password name =pwd value="" ></td></tr>
+
+<tr><td>ReEnter Password :</td><td><input type =password name =pwd1 value="" ></td></tr>
+
+<tr><td>Age      :</td><td><input type =text name=age></td></tr>
+
+<tr><td> Sex      :</td><td><input type =radio name =r1 value=Male checked >Male
+                   <input type =radio name =r1 value=Female>Female</td></tr>
+
+<tr><td>          City     :</td><td><select name=city>
+                   <option selected> Hyderabad</option>
+                  <option> Bangalore</option>
+                  <option> Mumbai</option>
+                  <option> Ranchi</option>
+                  <option> Kolkata</option>
+                  <option> Patna</option>
+                  <option> Bhuaneswar</option>
+                  <option> Gurgaon</option>
+                  </select> </td></tr>
+
+<tr><td>          State    :</td><td><select name=state>
+                   <option selected> Andhra Pradesh</option>
+                   <option selected> Maharastra</option>
+                   <option selected> Odisha</option>
+                   <option selected> Bihar</option>
+                   <option selected>Haryana</option>
+                   </select> </td></tr>
+
+<tr><td>          PinCode  :</td><td><input type =text name =pin maxsize=6 value=""  ></td></tr>
+
+
+<tr><td>          Nation   :</td><td><select name=nation>
+                      <option selected> India</option>
+                      </select></td></tr>
+
+</table>
+<br><br>
+<pre>
+<input type =Button name =regis value="Register" onClick="check()">   <input type =Reset name =reset value="Reset"></font>
+</form></body></html>
+
